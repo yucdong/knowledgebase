@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>街拍整理</title>
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --paper: #fffdf8;
+      --ink: #1f1d1a;
+      --muted: #6d655d;
+      --line: #d8cfbf;
+      --accent: #8f3d2e;
+    }
+
+    @page {
+      size: A4;
+      margin: 16mm 14mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(143, 61, 46, 0.08), transparent 28%),
+        linear-gradient(180deg, #f6f1e8 0%, #efe6d7 100%);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    main {
+      width: 210mm;
+      margin: 0 auto;
+      padding: 10mm 0 14mm;
+    }
+
+    .page {
+      background: var(--paper);
+      border: 1px solid rgba(216, 207, 191, 0.8);
+      border-radius: 12px;
+      padding: 14mm 12mm;
+      box-shadow: 0 12px 40px rgba(44, 34, 24, 0.08);
+      margin-bottom: 10mm;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 15px;
+      margin: 18px 0 10px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 0 0 10px;
+      line-height: 1.75;
+      font-size: 13px;
+    }
+
+    ul, ol {
+      margin: 0 0 10px 20px;
+      padding: 0;
+      line-height: 1.75;
+      font-size: 13px;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .lede {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 42em;
+    }
+
+    .meta {
+      margin-top: 20px;
+      padding: 12px 14px;
+      background: rgba(143, 61, 46, 0.05);
+      border-left: 3px solid var(--accent);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 18px;
+    }
+
+    .card {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(143, 61, 46, 0.08);
+      color: var(--accent);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #ece6dc;
+    }
+
+    figcaption {
+      padding: 8px 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="page">
+      <div class="eyebrow">Street Photography Notes</div>
+      <h1>街拍整理</h1>
+      <p class="lede">基于现有街拍笔记整理，聚焦拍摄地点、晴天与夜晚的街拍思路，以及适合在现场快速复用的观察和等待方法。</p>
+      <div class="meta">
+        素材来源：拍摄地点清单与郭城安街拍笔记。<br />
+        重点不是追着人拍，而是先找到光线、构图和环境，再等待人物进入画面。
+      </div>
+    </section>
+
+    <section class="page">
+      <h2>拍摄地点建议</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>上海</h3>
+          <ul>
+            <li>徐汇滨江公园</li>
+            <li>龙美术馆</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>南京</h3>
+          <p>待补充。</p>
+          <h3>苏州</h3>
+          <p>待补充。</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 22px;">街拍核心思路</h2>
+      <ul>
+        <li>街拍强调环境中的人，而不是强肖像感。</li>
+        <li>先看光，再找线条、边框、镜面、前景和背景关系。</li>
+        <li>逆光更容易形成剪影，也更有利于分离人物和背景。</li>
+        <li>等待比追拍更重要，先选好位置，再等人物进入。</li>
+      </ul>
+    </section>
+
+    <section class="page">
+      <h2>晴天街拍</h2>
+      <h3>曝光与景深</h3>
+      <ul>
+        <li>晴天不必把光圈开得太大。</li>
+        <li>类似 F5.6 的设置，通常能兼顾环境信息与主体分离。</li>
+      </ul>
+
+      <h3>常见拍法</h3>
+      <ol>
+        <li>逆光结合框架构图，拍剪影和强明暗对比。</li>
+        <li>顺光利用被照亮的建筑色彩，再加入花草、芦苇等前景。</li>
+        <li>把柱子、栏杆等线条纳入构图，等待人物经过。</li>
+        <li>寻找走廊、街道、通道里的纵深感。</li>
+        <li>使用“黑包白”思路，让深色区域包裹亮部主体。</li>
+        <li>利用镜子与反射面制造层次和陌生感。</li>
+        <li>在地下车库等位置从低处向上拍，适合中心构图。</li>
+        <li>用树叶等自然元素做前景，让阳光和人物剪影同时成立。</li>
+      </ol>
+
+      <div class="keywords">
+        <span class="tag">剪影</span>
+        <span class="tag">框架构图</span>
+        <span class="tag">黑包白</span>
+        <span class="tag">线条</span>
+        <span class="tag">前景遮挡</span>
+        <span class="tag">纵深感</span>
+        <span class="tag">镜面反射</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <h2>夜晚街拍</h2>
+      <h3>核心观察点</h3>
+      <ul>
+        <li>继续沿用“黑包白”思路，把亮部当作画面中心。</li>
+        <li>主动找光源，例如店铺、窗户、楼道、广告牌、车灯和路灯。</li>
+        <li>优先拍逆光和侧逆光，让人物从背景里跳出来。</li>
+        <li>雨夜、玻璃、车窗、水面都能增强夜景层次。</li>
+      </ul>
+
+      <h3>常见拍法</h3>
+      <ol>
+        <li>把室内向外透出的光作为视觉中心。</li>
+        <li>在很暗的环境里关注红色和暖色元素。</li>
+        <li>利用雨夜车窗后的人影与倒影做叙事。</li>
+        <li>先找到灯光，再等待人物走进亮区。</li>
+        <li>暖光适合温馨场景，冷暖双侧光适合等待双人关系。</li>
+        <li>楼梯、墙边、建筑边缘都可以做分界线和剪影背景。</li>
+        <li>玻璃反射、灯光反射和低角度建筑全景都值得尝试。</li>
+      </ol>
+
+      <div class="keywords">
+        <span class="tag">主动找光</span>
+        <span class="tag">逆光</span>
+        <span class="tag">冷暖对比</span>
+        <span class="tag">玻璃反射</span>
+        <span class="tag">低角度</span>
+        <span class="tag">分界线</span>
+        <span class="tag">剪影层次</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <h2>现场拍摄流程</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>1. 先看环境</h3>
+          <ul>
+            <li>先判断主光源位置。</li>
+            <li>确认背景是否干净。</li>
+            <li>观察是否有线条、边框、镜面和前景可利用。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>2. 再定机位</h3>
+          <ul>
+            <li>低角度适合夸张空间关系。</li>
+            <li>正面等待适合中心构图。</li>
+            <li>侧面等待适合用墙面、楼梯、玻璃和柱子组织画面。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 16px;">
+        <h3>3. 最后等人物</h3>
+        <ul>
+          <li>等人物进入亮部或透视中心。</li>
+          <li>等动作、姿态和人物关系形成张力。</li>
+          <li>避免过度靠近，让画面仍然保留街拍的环境感。</li>
+        </ul>
+      </div>
+
+      <h2 style="margin-top: 22px;">避免的问题</h2>
+      <ul>
+        <li>只拍到人，没有拍到环境关系。</li>
+        <li>人物和背景没有形成层次分离。</li>
+        <li>前景、反射和线条过多，导致主体不明确。</li>
+        <li>画面太靠近人物，失去街拍语境。</li>
+      </ul>
+      <p class="small">参考视频：Bilibili BV1Bj411T7te</p>
+    </section>
+
+    <section class="page">
+      <h2>夜拍示例图</h2>
+      <div class="gallery">
+        <figure>
+          <img src="郭城安/街拍/image.png" alt="夜拍示例 1" />
+          <figcaption>示例 1：亮部作为视觉中心。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-1.png" alt="夜拍示例 2" />
+          <figcaption>示例 2：暗环境中的高饱和色彩。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-2.png" alt="夜拍示例 3" />
+          <figcaption>示例 3：雨夜、车窗与人物关系。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-3.png" alt="夜拍示例 4" />
+          <figcaption>示例 4：主动找光，等待人物进入。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-4.png" alt="夜拍示例 5" />
+          <figcaption>示例 5：暖光适合温馨场景。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-5.png" alt="夜拍示例 6" />
+          <figcaption>示例 6：环境中的人，避免强肖像感。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-6.png" alt="夜拍示例 7" />
+          <figcaption>示例 7：楼梯和建筑光源形成剪影。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-7.png" alt="夜拍示例 8" />
+          <figcaption>示例 8：前景遮挡增加层次。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-8.png" alt="夜拍示例 9" />
+          <figcaption>示例 9：低角度拍建筑与空间。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-9.png" alt="夜拍示例 10" />
+          <figcaption>示例 10：玻璃与灯光反射作为前景。</figcaption>
+        </figure>
+        <figure>
+          <img src="郭城安/街拍/image-10.png" alt="夜拍示例 11" />
+          <figcaption>示例 11：墙边与边界线组织画面。</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
